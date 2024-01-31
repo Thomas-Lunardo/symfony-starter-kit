@@ -1,2 +1,113 @@
-//start coding by removing this file and adding yours ;)
-@import "wcs";
+@import "~bootstrap/scss/bootstrap";
+
+// =========== CSS VARIABLES =====================//
+$background-color-main: rgba(255, 254, 249, 1);
+$backgroundButton: rgba(138, 255, 234, 0.66);
+$font-color-main: rgba(22, 20, 20, 1);
+$boxShadow: 5px 5px 9px -3px #000000;
+
+$fontTitle: "Maven Pro";
+$fontText: "Noto Sans";
+
+$fontSizeText: 0.9375rem;
+$borderRadiusButton: 1rem;
+
+// ==============================================//
+
+// ================== MIXIN =====================//
+
+@mixin myButton(
+    $x,
+    $y,
+    $border-radius,
+    $background-color,
+    $color,
+    $box-shadow,
+) {
+    width: $x;
+    height: $y;
+    border-radius: $borderRadiusButton;
+    background-color: $backgroundButton;
+    color: $font-color-main;
+    box-shadow: $boxShadow;
+}
+
+// ============================================//
+
+// ================= ALL =====================//
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    margin:0;
+    background-color: $background-color-main;
+    color: $font-color-main;
+}
+
+// ==============================================//
+
+// ================= HEADER =====================//
+
+header{
+    display: flex;
+    justify-content: center;
+    img{
+            width: 5em;
+            margin: 16px 0;
+        }
+    }
+
+// ==============================================//
+
+// ================= HOME PAGE =====================//
+
+.main-home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        font-family: $fontTitle;
+        margin: 0 0 32px;
+    }
+}
+
+
+
+.main-home {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 500px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 24px 0;
+    @include myButton(
+        12rem,
+        4rem,
+        ($borderRadiusButton),
+        ($backgroundButton),
+        ($font-color-main),
+        ($boxShadow),
+    );
+    &:hover {
+        background-color: $font-color-main;
+        color: $background-color-main;
+    }
+}
+// =============================================//
