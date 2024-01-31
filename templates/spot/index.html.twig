@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpotController!
+{% endblock %}
+
+{% block body %}
+
+	<h1>Découvrez les meilleurs spots de la côte Altantique :
+	</h1>
+	{% for spot in spots %}
+		<div>
+			<h2>{{ spot.spotName }}</h2>
+            <img src="{{ spot.picture }}" alt="">
+			
+			<p>{{ spot.description }}</p>
+		</div>
+	{% else %}
+		Aucune spot trouvé.
+	{% endfor %}
+
+{% endblock %}
