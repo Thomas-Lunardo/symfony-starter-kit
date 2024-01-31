@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les spots
+{% endblock %}
+
+{% block body %}
+
+	<main class="container">
+		<h1 class="text-center m-4">Découvrez les meilleurs spots de la côte Altantique
+		</h1>
+		{% for spot in spots %}
+			<div class="card mt-5 mb-3">
+				<img src="{{ spot.picture }}" class="card-img-top" alt="photo d'un spot de surf sur la côte Altantique Française">
+				<div class="card-body">
+					<h5 class="card-title">{{ spot.spotName }}</h5>
+					 <a href="{{ path("app_spot_show", { id: spot.id }) }}" class="btn btn-primary button">Voir la fiche</a>
+				</div>
+			</div>
+		{% else %}
+			Aucune spot trouvé.
+		{% endfor %}
+	</main>
+
+{% endblock %}
