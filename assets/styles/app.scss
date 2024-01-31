@@ -47,6 +47,14 @@ body {
     color: $font-color-main;
 }
 
+.nav-link {
+    padding: 8px 0;
+
+    @include media-breakpoint-up(md) {
+        cursor: pointer;
+    }
+}
+
 // ==============================================//
 
 // ================= HEADER =====================//
