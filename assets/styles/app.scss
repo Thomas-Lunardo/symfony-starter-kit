@@ -3,6 +3,7 @@
 // =========== CSS VARIABLES =====================//
 $background-color-main: rgba(255, 254, 249, 1);
 $backgroundButton: rgba(138, 255, 234, 0.66);
+$icon-color: rgba(255, 138, 138, 1);
 $font-color-main: rgba(22, 20, 20, 1);
 $boxShadow: 5px 5px 9px -3px #000000;
 
@@ -39,12 +40,24 @@ $borderRadiusButton: 1rem;
 * {
     box-sizing: border-box;
     list-style: none;
+    scroll-behavior: smooth;
 }
 
 body {
     margin:0;
     background-color: $background-color-main;
     color: $font-color-main;
+    @include media-breakpoint-down(md) {
+        padding-bottom: 25%;
+    }
+}
+
+// ================= LINKS =====================//
+
+.fa-solid {
+    color: $icon-color;
+    font-size: 1.45rem;
+    padding: 0;
 }
 
 .nav-link {
@@ -54,6 +67,19 @@ body {
         cursor: pointer;
     }
 }
+
+// ==============================================//
+
+// ================= NAVBAR =====================//
+
+.navbar{
+    background-color: $background-color-main;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    bottom: 0;
+}
+
 
 // ==============================================//
 
