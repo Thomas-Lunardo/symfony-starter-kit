@@ -1,15 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Baïne
+{% endblock %}
 
 {% block body %}
-    <div class="pink-stripe">
-        <h1>
-            Let's start coding&nbsp;&#129304;
-        </h1>
-    </div>
-    <div class="white-stripe">
-        <img src="{{ asset('build/images/logo-wild-code-school.svg') }}"
-             alt="">
-    </div>
+
+	<main class="main-home">
+		<h1>
+			Bienvenue sur Baïne !
+		</h1>
+		<img src="{{ asset('/build/images/plage-sable-cote-ocean-paisible.27ac21f2.png') }}" alt="photo d'une plage avec des petites vagues au coucher du soleil">
+		<a href="#" class="btn btn-primary button" tabindex="-1" role="button">Inscrivez-vous</a>
+		<p>Découvrez les vagues et explorez les horizons du littoral atlantique français avec Baïne, votre guide ultime des spots de surf. Que vous soyez un surfeur chevronné à la recherche de nouvelles vagues ou un novice passionné par l'océan, notre plateforme vous offre une expérience unique pour planifier vos sessions et vivre des aventures inoubliables.</p>
+		<div class="accordion" id="accordionPanelsStayOpenExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+						Plus de détail
+					</button>
+				</h2>
+				<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+					<div class="accordion-body">
+						<strong>Explorer les Spots</strong>
+						<p>Parcourez notre base de données complète pour découvrir une multitude de spots de surf le long de la côte atlantique. Des informations détaillées sur chaque spot, telles que le type de vague, le niveau de difficulté et les conditions idéales, vous permettent de choisir votre prochaine destination avec confiance.</p>
+						<strong>Prévisions des Marées</strong>
+						<p>Ne manquez jamais le timing parfait ! Consultez les horaires des marées en temps réel pour chaque spot, afin d'optimiser vos sessions de surf en fonction des conditions actuelles.</p>
+						<strong>Signalez vos Sessions</strong>
+						<p>Partagez vos aventures ! Signalez vos sessions de surf en dehors des zones de baignade ou des horaires de surveillance pour contribuer à la sécurité et à la communauté des surfeurs.</p>
+						<p>Préparez-vous à vivre l'expérience ultime de surf avec Baïne. Que chaque vague soit une nouvelle aventure !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 {% endblock %}
