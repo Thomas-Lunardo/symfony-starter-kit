@@ -26,6 +26,9 @@ class Spot
     #[ORM\Column(length: 255)]
     private ?string $mapLink = null;
 
+    #[ORM\Column]
+    private ?int $zipCode = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Spot
     public function setMapLink(string $mapLink): static
     {
         $this->mapLink = $mapLink;
+
+        return $this;
+    }
+
+    public function getZipCode(): ?int
+    {
+        return $this->zipCode;
+    }
+
+    public function setZipCode(int $zipCode): static
+    {
+        $this->zipCode = $zipCode;
 
         return $this;
     }

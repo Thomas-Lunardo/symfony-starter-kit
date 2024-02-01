@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WeatherController!
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h2>Météo des plages</h2>
+        <p>Voici les prévisions météo du jour à <strong>{{ data.city.name}}</strong></p>
+        <p>{{ data.city.cp}}</p>
+		<ul>
+			<li>Vent moyen : {{ data.forecast.0.wind10m}} km/h</li>
+            <li>Rafales de vent  : {{ data.forecast.0.gust10m}} km/h</li>
+            <li>Direction du vent : {{ data.forecast.0.dirwind10m}} °</li>
+            <li>Probabilité de pluie : {{ data.forecast.0.probarain}} %</li>
+            <li>Code temps  : {{ data.forecast.0.weather}}</li>
+            <li>Température minimale  : {{ data.forecast.0.tmin}} °C</li>
+            <li>Température maximale  : {{ data.forecast.0.tmax}} °C</li>
+            <li>Temps d'ensoleillement : {{ data.forecast.0.tmax}} heures</li>
+            <li>Probabilité de vent >70 km/h : {{ data.forecast.0.probawind70}} %</li>
+            <li>Probabilité de vent >100 km/h : {{ data.forecast.0.probawind100}} %</li>
+        </ul>
+	</div>
+{% endblock %}

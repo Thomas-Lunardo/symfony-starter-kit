@@ -5,18 +5,37 @@
 
 {% block body %}
 
-	<main class="container">
+	<main class="container pb-5">
 		<h1 class="text-center m-4">Découvrez les meilleurs spots de la côte Altantique
 		</h1>
 		<div class="card mt-5 mb-3">
 			<img src="{{ spot.picture }}" class="card-img-top" alt="photo du spot de surf {{ spot.spotName }} sur la côte Altantique Française">
 			<div class="card-body">
 				<h5 class="card-title">{{ spot.spotName }}</h5>
+				<p class="card-text">Code postal : {{ spot.zipCode }}</p>
 				<p class="card-text">{{ spot.description }}</p>
 				<a class="nav-link" href="{{ spot.mapLink }}" target="_blank">
 					<i class="fa-solid fa-location-dot"></i>
 				</a>
 
+			</div>
+		</div>
+		<div class="card mt-5 mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Météo du jour</h5>
+				{# <strong>{{ data.city.name}}</strong> #}
+					<ul>
+						<li>Vent moyen : {{ data.forecast.0.wind10m}} km/h</li>
+            			<li>Rafales de vent  : {{ data.forecast.0.gust10m}} km/h</li>
+            			<li>Direction du vent : {{ data.forecast.0.dirwind10m}} °</li>
+            			<li>Probabilité de pluie : {{ data.forecast.0.probarain}} %</li>
+            			<li>Code temps  : {{ data.forecast.0.weather}}</li>
+            			<li>Température minimale  : {{ data.forecast.0.tmin}} °C</li>
+            			<li>Température maximale  : {{ data.forecast.0.tmax}} °C</li>
+            			<li>Temps d'ensoleillement : {{ data.forecast.0.tmax}} heures</li>
+            			<li>Probabilité de vent >70 km/h : {{ data.forecast.0.probawind70}} %</li>
+            			<li>Probabilité de vent >100 km/h : {{ data.forecast.0.probawind100}} %</li>
+					</ul>
 			</div>
 		</div>
 	</main>
