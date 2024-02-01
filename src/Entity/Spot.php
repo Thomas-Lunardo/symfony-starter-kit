@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SpotRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class Spot
 
     #[ORM\Column]
     private ?int $zipCode = null;
+
+    #[ORM\OneToMany(mappedBy: 'spot', targetEntity: Session::class)]
+    private Collection $session;
+
+    public function __construct()
+    {
+        $this->session = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,36 @@ class Spot
     public function setZipCode(int $zipCode): static
     {
         $this->zipCode = $zipCode;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Session>
+     */
+    public function getSession(): Collection
+    {
+        return $this->session;
+    }
+
+    public function addSession(Session $session): static
+    {
+        if (!$this->session->contains($session)) {
+            $this->session->add($session);
+            $session->setSpot($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSession(Session $session): static
+    {
+        if ($this->session->removeElement($session)) {
+            // set the owning side to null (unless already changed)
+            if ($session->getSpot() === $this) {
+                $session->setSpot(null);
+            }
+        }
 
         return $this;
     }

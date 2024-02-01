@@ -6,9 +6,21 @@
 {% block body %}
 
 	<main class="main-home">
-		<h1>
-			Bienvenue sur Baïne !
-		</h1>
+
+		{% if app.user %}
+			<div class="mb-3">
+				<h3>Salut
+					{{ app.user.firstname }}
+					!</h3>
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% else %}
+			<h1>
+				Bienvenue sur Baïne !
+			</h1>
+		{% endif %}
+
+
 		<img src="{{ asset('/build/images/plage-sable-cote-ocean-paisible.27ac21f2.png') }}" alt="photo d'une plage avec des petites vagues au coucher du soleil">
 		<a href="#" class="btn btn-primary button" tabindex="-1" role="button">Inscrivez-vous</a>
 		<p>Découvrez les vagues et explorez les horizons du littoral atlantique français avec Baïne, votre guide ultime des spots de surf. Que vous soyez un surfeur chevronné à la recherche de nouvelles vagues ou un novice passionné par l'océan, notre plateforme vous offre une expérience unique pour planifier vos sessions et vivre des aventures inoubliables.</p>
