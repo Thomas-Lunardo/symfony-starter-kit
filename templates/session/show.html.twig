@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le spot #{{ spot.id }}
+{% endblock %}
+
+{% block body %}
+
+	<main class="container pb-5">
+		<h1 class="text-center m-4">Ma session en cours
+		</h1>
+		<div class="card mt-5 mb-3">
+			<img src="{{ spot.picture }}" class="card-img-top" alt="photo du spot de surf {{ spot.spotName }} sur la côte Altantique Française">
+			<div class="card-body">
+				<h5 class="card-title">{{ spot.spotName }}</h5>
+				<p class="card-text">Code postal : {{ spot.zipCode }}</p>
+				<p class="card-text">{{ spot.description }}</p>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
