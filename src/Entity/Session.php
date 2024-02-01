@@ -24,6 +24,9 @@ class Session
     #[ORM\JoinColumn(nullable: false)]
     private ?Spot $spot = null;
 
+    #[ORM\ManyToOne(inversedBy: 'sessions')]
+    private ?User $surfer = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +64,18 @@ class Session
     public function setSpot(?Spot $spot): static
     {
         $this->spot = $spot;
+
+        return $this;
+    }
+
+    public function getSurfer(): ?User
+    {
+        return $this->surfer;
+    }
+
+    public function setSurfer(?User $surfer): static
+    {
+        $this->surfer = $surfer;
 
         return $this;
     }
