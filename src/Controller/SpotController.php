@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Spot;
 use App\Repository\SpotRepository;
+use App\Service\CallApiService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +23,7 @@ class SpotController extends AbstractController
     }
 
     #[Route('/show/{id<^[0-9]+$>}', name: 'app_spot_show')]
-    public function show(int $id, SpotRepository $spotRepository): Response
+    public function show(int $id, SpotRepository $spotRepository, CallApiService $callApiService): Response
     {
         $spot = $spotRepository->findOneBy(['id' => $id]);
 
@@ -31,8 +32,11 @@ class SpotController extends AbstractController
                 'Auncun spot : ' . $id . ' trouvé dans la table spot.'
             );
         }
+        // dd($callApiService->getWeatherData());
+
         return $this->render('spot/show.html.twig', [
         'spot' => $spot,
+        'data' => $callApiService->getWeatherData()
         ]);
     }
 }

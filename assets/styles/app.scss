@@ -47,9 +47,6 @@ body {
     margin:0;
     background-color: $background-color-main;
     color: $font-color-main;
-    @include media-breakpoint-down(md) {
-        padding-bottom: 25%;
-    }
 }
 
 // ================= LINKS =====================//
