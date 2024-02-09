@@ -1,28 +1,8 @@
-# Project 3 - Starter Kit - Symfony
-
-## Change Log
-See [CHANGELOG.md](CHANGELOG.md) for more information.
+# Checkpoint 4
 
 ## Presentation
 
-This starter kit is here to easily start a repository for Wild Code School students.
-
-It's symfony website-skeleton project with some additional library (webpack, fixtures) and tools to validate code standards.
-
-* GrumPHP, as pre-commit hook, will run 2 tools when `git commit` is run :
-
-    * PHP_CodeSniffer to check PSR12
-    * PHPStan focuses on finding errors in your code (without actually running it)
-    * PHPmd will check if you follow PHP best practices
-
-  If tests fail, the commit is canceled and a warning message is displayed to developper.
-
-* Github Action as Continuous Integration will be run when a branch with active pull request is updated on github. It will run :
-
-    * Tasks to check if vendor, .idea, env.local are not versionned,
-    * PHP_CodeSniffer, PHPStan and PHPmd with same configuration as GrumPHP.
-
-## Getting Started for Students
+This repo is about my last checkpoint at school.
 
 ### Prerequisites
 
@@ -64,66 +44,4 @@ The `.editorconfig` file in root directory do this for you. You probably need `E
 docker compose up -d
 ```
 3. Wait a moment and visit http://localhost:8000
-
-
-## Deployment
-
-Some files are used to manage automatic deployments (using Docker, GitHub Action to a Traefik environment). Please do not modify them.
-
-* [docker-compose.yml](/docker-compose.yml) Docker configuration for local development
-* [docker-compose.prod.yml](/docker-compose.prod.yml) Docker configuration for production
-* [.github/workflows/deploy-traefik.yml](/.github/workflows/deploy-traefik.yml) GitHub Action workflow to deploy Traefik
-* [Dockerfile](/Dockerfile) Web app configuration for Docker container
-* [docker-entry.sh](/docker-entry.sh) shell instruction to execute when docker image is built
-* [nginx.conf](/ginx.conf) Nginx server configuration
-* [php.ini](/php.ini) Php configuration
-
-
-## Built With
-
-* [Symfony](https://github.com/symfony/symfony)
-* [GrumPHP](https://github.com/phpro/grumphp)
-* [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* [PHPStan](https://github.com/phpstan/phpstan)
-* [PHPMD](http://phpmd.org)
-* [Sass-Lint](https://github.com/sasstools/sass-lint)
-
-
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-
-## Authors
-
-Wild Code School trainers team
-
-## License
-
-MIT License
-
-Copyright (c) 2019 aurelien@wildcodeschool.fr
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-## Acknowledgments
 
